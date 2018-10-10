@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<!-- My first CSS Grid -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <style>
+      .wrapper{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 40px 100px 40px;
+      }
+
+      .header{
+        grid-column: span 12;
+        background-color: lightblue;
+      }
+
+      .menu {
+        grid-column: span 4;
+        background-color: red;
+      }
+
+      .content{
+        grid-column: span 8;
+        background-color: orange;
+      }
+
+      .footer{
+        grid-column: span 12;
+        background-color: blue;
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class = "wrapper">
+      <div class = "header">Header</div>
+      <div class = "menu">Menu</div>
+      <div class = "content">Content</div>
+      <div class = "footer">Footer</div>
+    </div>
+
+</html>
