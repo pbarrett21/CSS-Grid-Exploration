@@ -3,8 +3,9 @@
 <!-- First ReactJS -->
 <!-- https://medium.freecodecamp.org/learn-react-js-in-5-minutes-526472d292f4 -->
 
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8"/>
   <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
   <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
   <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
@@ -13,16 +14,48 @@
   <div id="root"></div>
   <script type="text/babel">
 
-  class Hello extends React.Component {
+  /* Passing props to a component */
+/*
+  class Hello1 extends React.Component {
     render() {
       return <h1> Hello {this.props.message}! </h1>;
     }
   }
 
-  ReactDOM.render {
+  ReactDOM.render(
     <Hello message="my friend" />,
     document.getElementById("root")
-  };
+  );
+*/
+
+/* Using states */
+class Hello extends React.Component {
+
+  constructor(){
+      super();
+      this.state = {
+          message: "my friend (from state)!"
+      };
+      this.updateMessage = this.updateMessage.bind(this);
+  }
+
+  updateMessage() {
+      this.setState({
+          message: "my friend (from changed state)!"
+      });
+  }
+
+  render() {
+       return (
+         <div>
+           <h1>Hello {this.state.message}!</h1>
+           <button onClick={this.updateMessage}>Click me!</button>
+         </div>
+      )
+  }
+}
+
+
 
   </script>
 </body>
